@@ -1,0 +1,836 @@
+{
+  "Uuid": "5f15db47-6b66-4998-a3f1-323e2a046da1",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "MARK CREATOR",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "b65ba6f5284a48b5b4bd183e78b605ce",
+      "Name": "Category Selection",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
+      "Value": "OST_Conduit",
+      "Description": "All built-in categories.",
+      "SelectedIndex": 143
+    },
+    {
+      "Id": "db1878cbb08048a4a397cae6214c3846",
+      "Name": "Prefix Name",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "ALU -  ",
+      "Description": "Creates a string.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "86df8d5523d047f4a22be89fafb9782e",
+      "Name": "Element.SetParameterByName",
+      "Type": "unknown",
+      "InitialValue": "",
+      "Description": "Set one of the element's parameters.\n\nElement.SetParameterByName (parameterName: string, value: var): Element"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategoryInView, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "7e4c78ef35b44021b22ab90e6fe28e9b",
+      "Inputs": [
+        {
+          "Id": "b3a3277662a54336be5284973a92249d",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fa53762d04e94410bf70b9b004df8467",
+          "Name": "View",
+          "Description": "The View",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "de0cbd843ab54fee9bd7e2034e3cb5c3",
+          "Name": "Elements",
+          "Description": "An element class.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category in the specified view from the model."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 143,
+      "SelectedString": "OST_Conduit",
+      "NodeType": "ExtensionNode",
+      "Id": "b65ba6f5284a48b5b4bd183e78b605ce",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "44cf388ec2a74692a4d53c603bff708b",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.SetParameterByName@string,var",
+      "Id": "86df8d5523d047f4a22be89fafb9782e",
+      "Inputs": [
+        {
+          "Id": "c0baf22dad124d7c847d2d2f110c0b51",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9dee8fe882834695a761fefb50df895c",
+          "Name": "parameterName",
+          "Description": "The name of the parameter to set.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "36317369dde74bbf934aa1f7fa5aa3ea",
+          "Name": "value",
+          "Description": "The value.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "58a54ea69e0a4aa588e8657f1998b974",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Set one of the element's parameters.\n\nElement.SetParameterByName (parameterName: string, value: var): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Count@var[]..[]",
+      "Id": "163da06a89cb4e1b93f046b905bc995d",
+      "Inputs": [
+        {
+          "Id": "69f4678a0d9e48dc802b02ee3cf8bcb7",
+          "Name": "list",
+          "Description": "List to get the item count of.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d9189f0360084247b4d8137cf6fce6d0",
+          "Name": "int",
+          "Description": "List length.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the number of items stored in the given list.\n\nList.Count (list: var[]..[]): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Orchid.RevitProject.Common.Document.ActiveView@Revit.Application.Document",
+      "Id": "34d8de3e72794bca88e8cf9c414da228",
+      "Inputs": [
+        {
+          "Id": "6c06ab4c794e4acba9c151babdc3f71b",
+          "Name": "document",
+          "Description": "Project document (rvt).\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1850544ea3434e04b90b4f00384dbe23",
+          "Name": "View",
+          "Description": "The active view.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the active view in the document.\n\nDocument.ActiveView (document: Document = null): Element"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Sequence, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "0e2b08f39d2f429bbf980df8697b7f66",
+      "Inputs": [
+        {
+          "Id": "d1e4681a664f4748b8ea5d8d32b2b089",
+          "Name": "start",
+          "Description": "Number or letter to start the sequence at\r\nDefault value: 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e18d003e3fe146f799cf69950a596f87",
+          "Name": "amount",
+          "Description": "Amount of numbers or letters in the sequence\r\nDefault value: 10",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "49dcf736930942448d87b161d3c88049",
+          "Name": "step",
+          "Description": "Space between numbers or letters\r\nDefault value: 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f3ca618530e8451c8442c7cd9098756a",
+          "Name": "list",
+          "Description": "New list of type: var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Creates a sequence of numbers."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "ALU -  ",
+      "Id": "db1878cbb08048a4a397cae6214c3846",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "90fa9115df5448e6a9d7ed0c1f901864",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.FromObject, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "3e0ebef88fb84112bc3bcc69d348707d",
+      "Inputs": [
+        {
+          "Id": "2717b1caafd0439ca911d4fcef04c774",
+          "Name": "object",
+          "Description": "Object to be serialized",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "02d041adccd844cab789424edd0a5f2c",
+          "Name": "string",
+          "Description": "String representation of the object",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Convert an object to a string representation."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
+      "Id": "d6a81df9cdf24c37a437465be7616a6c",
+      "Inputs": [
+        {
+          "Id": "2d5c0f7caf5c47f39a8d13100eb990dd",
+          "Name": "list",
+          "Description": "List to flatten.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4e183604cf114cab989e0a12c3a9e57d",
+          "Name": "amount",
+          "Description": "Layers of list nesting to remove (-1 will remove all list nestings)\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1676b63c46e6486a99355c58861a41dc",
+          "Name": "list",
+          "Description": "Flattened list by amount",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amount: int = -1): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.HigherOrder.Map, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "7e58d90508c64ec89509d100ee3576bb",
+      "Inputs": [
+        {
+          "Id": "a3d0d37b2cde4818a5d437cd1e587101",
+          "Name": "list",
+          "Description": "The list to map over.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7ba4fbc381b2469fb8ab64bb918f6647",
+          "Name": "function",
+          "Description": "The procedure used to map element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0fd198a9208247eea75d0762be2513b0",
+          "Name": "list",
+          "Description": "Mapped list of type: var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Applies a function over all elements of a list, generating a new list from the results."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSVarArgFunction, DynamoCore",
+      "FunctionSignature": "DSCore.String.Concat@string[]",
+      "FunctionType": "VariableArgument",
+      "NodeType": "FunctionNode",
+      "Id": "8c96076e54f44c68822bd374a2d85e50",
+      "Inputs": [
+        {
+          "Id": "2f70e911b2894b97a70b8715dbb2518d",
+          "Name": "string0",
+          "Description": "List of strings to concatenate.\n\nstring[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3b2fcb1afb1245d7a19ebb75ac76ec21",
+          "Name": "string1",
+          "Description": "string[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ac3e753a64894f57b4c0e9e2548a5304",
+          "Name": "string",
+          "Description": "String made from list of strings.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Concatenates multiple strings into a single string.\n\nString.Concat (strings: string[]): string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Clean@var[]..[],bool",
+      "Id": "2c0b21b8dc074a9586d11c18fef1ea6b",
+      "Inputs": [
+        {
+          "Id": "77021cb0d9944c23826303cfbc2f83a9",
+          "Name": "list",
+          "Description": "List containing nulls and empty sublists to clean\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2ed8b4ce192a45ecb04637b82669770b",
+          "Name": "preserveIndices",
+          "Description": "Provide an option to preserve the indices of the data\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9dbb17212afe4cffa6fa61706a18f30b",
+          "Name": "list",
+          "Description": "List of transposed lists",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Cleans data of nulls and empty lists from a given list of arbitrary dimension\n\nList.Clean (list: var[]..[], preserveIndices: bool = true): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Mark\";",
+      "Id": "fb659d72bbd14912adbe824928128c41",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2988bbe395734113950365d1cb077d76",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "de0cbd843ab54fee9bd7e2034e3cb5c3",
+      "End": "c0baf22dad124d7c847d2d2f110c0b51",
+      "Id": "9826abbf6c5845fda185f72cf002d0a7",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "de0cbd843ab54fee9bd7e2034e3cb5c3",
+      "End": "69f4678a0d9e48dc802b02ee3cf8bcb7",
+      "Id": "af0cf5d367524ebeadfa3141691dc51f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "44cf388ec2a74692a4d53c603bff708b",
+      "End": "b3a3277662a54336be5284973a92249d",
+      "Id": "2aaf49655e23443980b85400e72fa567",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d9189f0360084247b4d8137cf6fce6d0",
+      "End": "e18d003e3fe146f799cf69950a596f87",
+      "Id": "0bc5be54542645e29b49b719788f41be",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1850544ea3434e04b90b4f00384dbe23",
+      "End": "fa53762d04e94410bf70b9b004df8467",
+      "Id": "4d526def0ffb499c97e9d75879a1b2c8",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f3ca618530e8451c8442c7cd9098756a",
+      "End": "2717b1caafd0439ca911d4fcef04c774",
+      "Id": "b07de00f001a419f8188845a907e5c92",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "90fa9115df5448e6a9d7ed0c1f901864",
+      "End": "2f70e911b2894b97a70b8715dbb2518d",
+      "Id": "425b683d83024635b167842cfc678440",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "02d041adccd844cab789424edd0a5f2c",
+      "End": "2d5c0f7caf5c47f39a8d13100eb990dd",
+      "Id": "8ce198d15ccf4b7e9cdefd782f0d6749",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1676b63c46e6486a99355c58861a41dc",
+      "End": "a3d0d37b2cde4818a5d437cd1e587101",
+      "Id": "ee5e087a5cd34d5dbd940557f1fad8d8",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0fd198a9208247eea75d0762be2513b0",
+      "End": "77021cb0d9944c23826303cfbc2f83a9",
+      "Id": "fa667a5954a44d9db2dbe087c0a7e168",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ac3e753a64894f57b4c0e9e2548a5304",
+      "End": "7ba4fbc381b2469fb8ab64bb918f6647",
+      "Id": "e5cb7db5216f42ec983cda5865ccf9b7",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "9dbb17212afe4cffa6fa61706a18f30b",
+      "End": "36317369dde74bbf934aa1f7fa5aa3ea",
+      "Id": "404c83fa24bd4be5a4c0490c6d298f81",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2988bbe395734113950365d1cb077d76",
+      "End": "9dee8fe882834695a761fefb50df895c",
+      "Id": "3b82a759d7994615978d75c870a0365f",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Orchid",
+      "Version": "216.3.0.5889",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "34d8de3e72794bca88e8cf9c414da228"
+      ]
+    }
+  ],
+  "Thumbnail": "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jafy9G0q4vQD80qriJP95z8o/E12TeNPh94VP/FP+EZNbul6XniCben1ES4X86wPFHxf8U+LIfs1zqJtbAcLY2KiCBR6BVxS5py+FW9f8g5acfilf0/z/wCHOk/4QDwd8PwJfGGujWNRXn+xNCcNz6STdF/DNZPib4yanqmmto2iW0Hhfw/0+waaCpkHrI/3nP1NefEk8nk0U1TV7zd3/XQHVdrQVl/XUOvJooorYwCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAFVirZUlT6itSx8Wa1pePsmrXttjp5U7L/Wsqik0nuNNrY7W3+NPjm1ULH4o1EKOzS7v51ZX49fEBenii9/8c/+JrgaKz9lT/lX3Gntan8z+87yT47eP5fveKb78GUfyFZeofFHxdqnF14j1KUehuGA/Q1y9FNU4LaKB1JveTLF1qN1fMWuLmadj1Mjlv51XooqzMKKKKYgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/2Q==",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.16",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "3.0",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.16.1.2727",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Name": "All Elements of Category in View",
+        "ShowGeometry": true,
+        "Id": "7e4c78ef35b44021b22ab90e6fe28e9b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 362.50241873275479,
+        "Y": 282.30118544229265
+      },
+      {
+        "Name": "Category Selection",
+        "ShowGeometry": true,
+        "Id": "b65ba6f5284a48b5b4bd183e78b605ce",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -7.1956359675747876,
+        "Y": 282.50671950055278
+      },
+      {
+        "Name": "Element.SetParameterByName",
+        "ShowGeometry": true,
+        "Id": "86df8d5523d047f4a22be89fafb9782e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "X": 2489.9148661576246,
+        "Y": 623.09482386820343
+      },
+      {
+        "Name": "List.Count",
+        "ShowGeometry": true,
+        "Id": "163da06a89cb4e1b93f046b905bc995d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 759.67321713834735,
+        "Y": 587.37187520673933
+      },
+      {
+        "Name": "Document.ActiveView",
+        "ShowGeometry": true,
+        "Id": "34d8de3e72794bca88e8cf9c414da228",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -9.2953903599461682,
+        "Y": 409.94167909951631
+      },
+      {
+        "Name": "Sequence",
+        "ShowGeometry": true,
+        "Id": "0e2b08f39d2f429bbf980df8697b7f66",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 977.999854729974,
+        "Y": 553.23056723043908
+      },
+      {
+        "Name": "Prefix Name",
+        "ShowGeometry": true,
+        "Id": "db1878cbb08048a4a397cae6214c3846",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1162.1075428129682,
+        "Y": 922.9340055336022
+      },
+      {
+        "Name": "String from Object",
+        "ShowGeometry": true,
+        "Id": "3e0ebef88fb84112bc3bcc69d348707d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1235.6577648644866,
+        "Y": 555.51496608072762
+      },
+      {
+        "Name": "List.Flatten",
+        "ShowGeometry": true,
+        "Id": "d6a81df9cdf24c37a437465be7616a6c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1562.3477312008258,
+        "Y": 572.51097381100828
+      },
+      {
+        "Name": "List.Map",
+        "ShowGeometry": true,
+        "Id": "7e58d90508c64ec89509d100ee3576bb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1817.9833417487532,
+        "Y": 699.32858729576765
+      },
+      {
+        "Name": "String.Concat",
+        "ShowGeometry": true,
+        "Id": "8c96076e54f44c68822bd374a2d85e50",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1404.9669139859377,
+        "Y": 777.12831470194544
+      },
+      {
+        "Name": "List.Clean",
+        "ShowGeometry": true,
+        "Id": "2c0b21b8dc074a9586d11c18fef1ea6b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2088.134660352091,
+        "Y": 715.188442053704
+      },
+      {
+        "Name": "p",
+        "ShowGeometry": true,
+        "Id": "fb659d72bbd14912adbe824928128c41",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2131.3287080568821,
+        "Y": 525.16571201036436
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "5a765ecdb7e84bf5931733bc772ebb4e",
+        "Title": "Category Selection",
+        "DescriptionText": "<Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "b65ba6f5284a48b5b4bd183e78b605ce"
+        ],
+        "HasNestedGroups": false,
+        "Left": -17.195635967574788,
+        "Top": 157.50671950055278,
+        "Width": 256.0,
+        "Height": 257.0,
+        "FontSize": 36.0,
+        "InitialTop": 282.50671950055278,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 115.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "6ee8110967184be6a88b24c271299651",
+        "Title": "Name Mark",
+        "DescriptionText": "<Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "db1878cbb08048a4a397cae6214c3846"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1152.1075428129682,
+        "Top": 797.9340055336022,
+        "Width": 183.0,
+        "Height": 257.0,
+        "FontSize": 36.0,
+        "InitialTop": 922.9340055336022,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 115.0,
+        "Background": "#FFFF7BAC"
+      },
+      {
+        "Id": "aa57e818c8b54d1aa6c1bec526b0eda3",
+        "Title": "Property Name",
+        "DescriptionText": "<Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "fb659d72bbd14912adbe824928128c41"
+        ],
+        "HasNestedGroups": false,
+        "Left": 2121.3287080568821,
+        "Top": 386.16571201036436,
+        "Width": 160.0,
+        "Height": 271.0,
+        "FontSize": 36.0,
+        "InitialTop": 525.16571201036436,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 129.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "8fad5f511c174805a71a5df15c0e02b7",
+        "Title": "OPTIONAL EDITION",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": 2138.8761745596194,
+        "Top": 343.56710408970008,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -1235.7700625064895,
+    "Y": -68.751698648144213,
+    "Zoom": 0.82147483032593194
+  }
+}
